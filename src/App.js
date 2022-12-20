@@ -2,6 +2,7 @@ import './App.css';
 import './categories.styles.scss';
 import { useState,useEffect } from 'react';
 import './components/category-item/category-item.styles.scss'
+import './components/Directory/Directory.styles.scss'
 //import 
 import Directory from './components/Directory/Directory.component.jsx'
 
