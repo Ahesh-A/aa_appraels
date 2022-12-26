@@ -10,7 +10,7 @@ const Directory = ({categories})=> {
                 key = {category.id}
                 />
             ))};
-
+        
         </div>
     );
 }
