@@ -1,7 +1,6 @@
 import { useState } from "react";
 import {
     createAuthUserWithEmailAndPassword,
-    auth,
     cerateUserDocumentFromAuth
 } from "../../utils/firebase/firebse.utils";
 
@@ -30,6 +29,8 @@ const SignUpForm = () => {
         setFormFields({ ...formFields, [name]: value });
 
     }
+
+    
     const resetFormFields = () => {
         setFormFields(defaultFormFileds);
     }
@@ -65,7 +66,7 @@ const SignUpForm = () => {
     }
 
     return (
-        <div>
+        <div className="sign-up-container">
             <h2>Don't hav ean account?</h2>
             <span>Sign up with your email and password</span>
             <form onSubmit={submitHandler} >
@@ -105,7 +106,7 @@ const SignUpForm = () => {
                     type="password"
                     required
                     onChange={changeHandler}
-                    name='confirmassword'
+                    name='confirmPassword'
                     value={confirmPassword}
 
                 />
