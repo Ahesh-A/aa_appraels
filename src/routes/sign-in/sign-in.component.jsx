@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import FormInput from "../../components/form-input/form-input.component";
 import Button from "../../components/button/Button.component";
 import '/media/ahesh/D4A801FFA801E13A/React/A&A_apparels/src/routes/sign-in/sign-in.styles.scss';
@@ -8,6 +8,7 @@ import {
     signInWithGoogleEmailAndPassword
 
 } from "../../utils/firebase/firebse.utils";
+import { UserContext } from "../../components/contexts/user.context";
 
 const defaultFormFields = {
     email: '',
@@ -18,6 +19,7 @@ const SingIn = () => {
 
     const [formFields, setFormFields] = useState(defaultFormFields);
     const { email, password } = formFields;
+    const { setCurrentUser } = useContext(UserContext);
 
     const changeHandler = (event) => {
         const { name, value } = event.target;
@@ -26,17 +28,35 @@ const SingIn = () => {
 
 
     const logGoogleUser = async () => {
-        const { user } = await signInWithGooglePopup();
-         await cerateUserDocumentFromAuth(user);
+        try {
+            const { user } = await signInWithGooglePopup();
+            await cerateUserDocumentFromAuth(user);
+            setCurrentUser(user);
+        } catch (error) {
+            console.log(error);
+        }
+        
     }
 
     const loginWithEmailAndPassword = async (event) => {
         event.preventDefault();
         try {
-            await signInWithGoogleEmailAndPassword(email, password);
+           const {user} = await signInWithGoogleEmailAndPassword(email, password);
             setFormFields(defaultFormFields);
+            setCurrentUser(user);
+            //setCurrentUser()
         } catch (error) {
-            console.log('Cannot login with email and password', error);
+            switch (error.code) {
+                case 'auth/wrong-password':
+                    alert('incorrect password for email');
+                    break;
+                case 'auth/user-not-found':
+                    alert('no user associated with this email');
+                    break;
+                default:
+                    console.log(error);
+            }
+
         }
 
     }
@@ -49,22 +69,22 @@ const SingIn = () => {
                 <FormInput
                     label="email"
                     type="email"
-                    required 
+                    required
                     onChange={changeHandler}
                     name='email'
                     value={email}
                 />
                 <FormInput
                     label="password"
-                    type="passwordustd"
-                    required 
+                    type="password"
+                    required
                     onChange={changeHandler}
                     name='password'
                     value={password}
                 />
                 <div className="buttons-container">
                     <Button type='submit' >Sign In</Button>
-                    <Button buttonType='google' onClick={logGoogleUser}>Google Sign In</Button>
+                    <Button type='button' buttonType='google' onClick={logGoogleUser}>Google Sign In</Button>
                 </div>
             </form>
         </div>

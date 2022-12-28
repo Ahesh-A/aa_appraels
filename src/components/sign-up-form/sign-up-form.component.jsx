@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import {
     createAuthUserWithEmailAndPassword,
     cerateUserDocumentFromAuth
@@ -7,6 +7,7 @@ import {
 import FormInput from "../form-input/form-input.component.jsx";
 import '/media/ahesh/D4A801FFA801E13A/React/A&A_apparels/src/components/sign-up-form/sign-up-form.styles.scss';
 import Button from '/media/ahesh/D4A801FFA801E13A/React/A&A_apparels/src/components/button/Button.component.jsx';
+import { UserContext } from "../contexts/user.context";
 
 const defaultFormFileds = {
     displayName: '',
@@ -21,8 +22,9 @@ const SignUpForm = () => {
 
     const [formFields, setFormFields] = useState(defaultFormFileds);
     const { displayName, email, password, confirmPassword } = formFields;
+    const val = useContext (UserContext);
 
-
+    console.log(val);
 
     const changeHandler = (event) => {
         const { name, value } = event.target;
@@ -30,10 +32,10 @@ const SignUpForm = () => {
 
     }
 
-    
     const resetFormFields = () => {
         setFormFields(defaultFormFileds);
     }
+
     const submitHandler = async (event) => {
 
         event.preventDefault();
@@ -67,12 +69,12 @@ const SignUpForm = () => {
 
     return (
         <div className="sign-up-container">
-            <h2>Don't hav ean account?</h2>
+            <h2>Don't have an account?</h2>
             <span>Sign up with your email and password</span>
             <form onSubmit={submitHandler} >
 
                 <FormInput
-                    label="Name"
+                    label="name"
                     type="text"
                     required
                     onChange={changeHandler}
@@ -82,7 +84,7 @@ const SignUpForm = () => {
                 />
 
                 <FormInput
-                    label="Email"
+                    label="email"
                     type="email"
                     required
                     onChange={changeHandler}
@@ -92,7 +94,7 @@ const SignUpForm = () => {
                 />
 
                 <FormInput
-                    label="Password"
+                    label="password"
                     type="password"
                     required
                     onChange={changeHandler}
@@ -102,7 +104,7 @@ const SignUpForm = () => {
                 />
 
                 <FormInput
-                    label="Confirm password"
+                    label="confirm password"
                     type="password"
                     required
                     onChange={changeHandler}
