@@ -24,7 +24,7 @@ const SignUpForm = () => {
     const { displayName, email, password, confirmPassword } = formFields;
     const val = useContext (UserContext);
 
-    console.log(val);
+    
 
     const changeHandler = (event) => {
         const { name, value } = event.target;

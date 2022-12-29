@@ -4,7 +4,6 @@ import Button from "../../components/button/Button.component";
 import '/media/ahesh/D4A801FFA801E13A/React/A&A_apparels/src/routes/sign-in/sign-in.styles.scss';
 import {
     signInWithGooglePopup,
-    cerateUserDocumentFromAuth,
     signInWithGoogleEmailAndPassword
 
 } from "../../utils/firebase/firebse.utils";
@@ -30,8 +29,8 @@ const SingIn = () => {
     const logGoogleUser = async () => {
         try {
             const { user } = await signInWithGooglePopup();
-            await cerateUserDocumentFromAuth(user);
-            setCurrentUser(user);
+            // await cerateUserDocumentFromAuth(user);
+            // setCurrentUser(user);
         } catch (error) {
             console.log(error);
         }
