@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState} from "react";
 import {
     createAuthUserWithEmailAndPassword,
     cerateUserDocumentFromAuth
@@ -7,7 +7,7 @@ import {
 import FormInput from "../form-input/form-input.component.jsx";
 import '/media/ahesh/D4A801FFA801E13A/React/A&A_apparels/src/components/sign-up-form/sign-up-form.styles.scss';
 import Button from '/media/ahesh/D4A801FFA801E13A/React/A&A_apparels/src/components/button/Button.component.jsx';
-import { UserContext } from "../contexts/user.context";
+
 
 const defaultFormFileds = {
     displayName: '',
@@ -22,10 +22,8 @@ const SignUpForm = () => {
 
     const [formFields, setFormFields] = useState(defaultFormFileds);
     const { displayName, email, password, confirmPassword } = formFields;
-    const val = useContext (UserContext);
 
     
-
     const changeHandler = (event) => {
         const { name, value } = event.target;
         setFormFields({ ...formFields, [name]: value });
@@ -47,9 +45,7 @@ const SignUpForm = () => {
 
 
         try {
-            //const {user}  = await createAuthUserWithEmailAndPassword(email, password);
-            //user.displayName = displayName;
-            //cerateUserDocumentFromAuth(user);
+           
             const { user } = await createAuthUserWithEmailAndPassword(email, password);
             await cerateUserDocumentFromAuth(user, { displayName });
             resetFormFields();
@@ -62,8 +58,6 @@ const SignUpForm = () => {
             }
 
         }
-
-
 
     }
 

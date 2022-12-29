@@ -28,9 +28,7 @@ const SingIn = () => {
 
     const logGoogleUser = async () => {
         try {
-            const { user } = await signInWithGooglePopup();
-            // await cerateUserDocumentFromAuth(user);
-            // setCurrentUser(user);
+            await signInWithGooglePopup();
         } catch (error) {
             console.log(error);
         }
