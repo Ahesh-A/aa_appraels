@@ -1,7 +1,7 @@
 import '/media/ahesh/D4A801FFA801E13A/React/A&A_apparels/src/components/cart-icon/cart-icon.styles.scss';
 
 import { ReactComponent as ShoppingIcon } from '/media/ahesh/D4A801FFA801E13A/React/A&A_apparels/src/assets/shopping-bag.svg';
-import { CartContext } from '../contexts/cart.context';
+import { CartContext } from '../../contexts/cart.context';
 import { useContext } from 'react';
 
 const CartIcon = () => {

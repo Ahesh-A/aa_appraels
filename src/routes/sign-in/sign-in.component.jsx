@@ -7,7 +7,7 @@ import {
     signInWithGoogleEmailAndPassword
 
 } from "../../utils/firebase/firebse.utils";
-import { UserContext } from "../../components/contexts/user.context";
+import { UserContext } from "../../contexts/user.context";
 
 const defaultFormFields = {
     email: '',

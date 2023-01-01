@@ -1,5 +1,5 @@
 import './check-out-card.styles.scss';
-import { CartContext } from '../../../components/contexts/cart.context';
+import { CartContext } from '../../../contexts/cart.context';
 import { useContext } from 'react';
 const CheckOutCard = ({ item }) => {
     const { addItemsToCart, removeItemsFromCart, decreaseItemsFromCart } = useContext(CartContext);

@@ -1,7 +1,7 @@
 import '/media/ahesh/D4A801FFA801E13A/React/A&A_apparels/src/components/cart-dropdown/cart-dropdown.styles.scss';
 import CartItem from '../cart-item/cart-item.component.jsx';
 import Button from '../button/Button.component.jsx';
-import { CartContext } from '../contexts/cart.context';
+import { CartContext } from '../../contexts/cart.context';
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 const CartDropdown = () => {

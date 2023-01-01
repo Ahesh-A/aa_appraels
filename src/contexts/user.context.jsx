@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from 'react';
-import { onAuthStateChangedListener, cerateUserDocumentFromAuth } from '../../utils/firebase/firebse.utils';
+import { onAuthStateChangedListener, cerateUserDocumentFromAuth } from '../utils/firebase/firebse.utils';
 // as the actula value we want to access
 export const UserContext = createContext({
     currentUser: null,
