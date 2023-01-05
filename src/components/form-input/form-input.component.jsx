@@ -1,20 +1,21 @@
-import '/media/ahesh/D4A801FFA801E13A/React/A&A_apparels/src/components/form-input/form-input.styles.scss';
+import { FormInputLabel, Input, Group} from "./form-input.styles";
+
 const FormInput = ({ label, ...otherProps }) => {
+
     return (
-        <div className="group">
-             <input className='form-input'
+        <Group>
+             <Input className='form-input'
                 {...otherProps}
             />
             {label && (
-                <label
-                    className={`${otherProps.value.length ? 'shrink' : ''
-                        } form-input-label`}>
+                <FormInputLabel shrink = {otherProps.value.length}>
                     {label}
-                </label>
+                </FormInputLabel>
             )}           
-        </div>
+        </Group>
 
     );
 
-}
+};
+
 export default FormInput;

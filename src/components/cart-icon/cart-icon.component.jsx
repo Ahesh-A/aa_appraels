@@ -1,6 +1,4 @@
-import '/media/ahesh/D4A801FFA801E13A/React/A&A_apparels/src/components/cart-icon/cart-icon.styles.scss';
-
-import { ReactComponent as ShoppingIcon } from '/media/ahesh/D4A801FFA801E13A/React/A&A_apparels/src/assets/shopping-bag.svg';
+import { ShoppingIcon, CartIconContainer, ItemCount } from './cart-icon.styles';
 import { CartContext } from '../../contexts/cart.context';
 import { useContext } from 'react';
 
@@ -11,10 +9,10 @@ const CartIcon = () => {
     }
 
     return (
-        <div className='cart-icon-container' onClick={clilckHandler}>
-            <ShoppingIcon className='shopping-icon' />
-            <span className='item-count'>{count}</span>
-        </div>
+        <CartIconContainer onClick={clilckHandler}>
+            <ShoppingIcon />
+            <ItemCount>{count}</ItemCount>
+        </CartIconContainer>
     );
 };
 
