@@ -6,7 +6,7 @@ const Home = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    let data = require("/media/ahesh/D4A801FFA801E13A/React/A&A_apparels/src/Data/catgeories.json");
+    let data = require("../../Data/catgeories.json");
     setCategories(data);
   }, [categories]);
 
