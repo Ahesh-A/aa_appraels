@@ -5,8 +5,8 @@ import {
 } from "../../utils/firebase/firebse.utils";
 
 import FormInput from "../form-input/form-input.component.jsx";
-import '/media/ahesh/D4A801FFA801E13A/React/A&A_apparels/src/components/sign-up-form/sign-up-form.styles.scss';
-import Button from '/media/ahesh/D4A801FFA801E13A/React/A&A_apparels/src/components/button/Button.component.jsx';
+import './sign-up-form.styles.scss';
+import Button from "../button/Button.component";
 
 
 const defaultFormFileds = {

@@ -1,6 +1,6 @@
-import DirectoryItem from "../directory-item/directory-item.component";
+import DirectoryItem from '../directory-item/directory-item.component';
 
-import '/media/ahesh/D4A801FFA801E13A/React/A&A_apparels/src/components/Directory/Directory.styles.scss';
+import './Directory.styles.scss';
 const Directory = ({ categories }) => {
   return (
     <div className="categories-container">

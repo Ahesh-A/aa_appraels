@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import FormInput from "../../components/form-input/form-input.component";
 import Button,{BUTTON_TYPE_CLASSES} from "../../components/button/Button.component";
-import '/media/ahesh/D4A801FFA801E13A/React/A&A_apparels/src/routes/sign-in/sign-in.styles.scss';
+import './sign-in.styles.scss';
 import {
     signInWithGooglePopup,
     signInWithGoogleEmailAndPassword

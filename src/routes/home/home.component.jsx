@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import Directory from "/media/ahesh/D4A801FFA801E13A/React/A&A_apparels/src/components/Directory/Directory.component.jsx";
-import "/media/ahesh/D4A801FFA801E13A/React/A&A_apparels/src/components/Directory/Directory.styles.scss";
+import Directory from "../../components/Directory/Directory.component";
+
 
 const Home = () => {
   const [categories, setCategories] = useState([]);

@@ -1,5 +1,5 @@
 import {Routes, Route} from 'react-router-dom'
-import '/media/ahesh/D4A801FFA801E13A/React/A&A_apparels/src/routes/shop/shop.styles.scss';
+import './shop.styles.scss';
 import CategoriesPreview from '../categories-preview/categories-preview.component';
 import Category from '../category/category.component';
 const Shop = () => {

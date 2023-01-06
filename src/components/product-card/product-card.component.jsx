@@ -1,5 +1,5 @@
 import Button from "../button/Button.component";
-import '/media/ahesh/D4A801FFA801E13A/React/A&A_apparels/src/components/product-card/product-card.styles.scss';
+import './product-card.styles.scss';
 import { useContext } from 'react'
 import { CartContext } from "../../contexts/cart.context";
 
