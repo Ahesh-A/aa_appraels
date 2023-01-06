@@ -1,9 +1,9 @@
 
 import { Route, Routes } from 'react-router-dom';
-import Home from '/media/ahesh/D4A801FFA801E13A/React/A&A_apparels/src/routes/home/home.component.jsx';
+import Home from './routes/home/home.component';
 import NavigationBar from './routes/navigation/navigation.component';
 import Authentication from './routes/Authentication/Authentication.component.jsx';
-import Shop from '/media/ahesh/D4A801FFA801E13A/React/A&A_apparels/src/routes/shop/shop.component.jsx';
+import Shop from './routes/shop/shop.component';
 //import CheckOut from './routes/check-out/check-out.component';
 import CheckOut from './routes/checkout/checkout.componet.jsx';
 
