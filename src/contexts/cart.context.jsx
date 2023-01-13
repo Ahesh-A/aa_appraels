@@ -112,6 +112,7 @@ export const CartProvider = ({ children }) => {
     const newCartItems = decreaseCartItem(items, productToDecrease);
     updateCartItemsReducer(newCartItems);
   };
+  
   const value = {
     isopen,
     setIsopen,

@@ -1,19 +1,26 @@
-import { ShoppingIcon, CartIconContainer, ItemCount } from './cart-icon.styles';
-import { CartContext } from '../../contexts/cart.context';
-import { useContext } from 'react';
-
+import { ShoppingIcon, CartIconContainer, ItemCount } from "./cart-icon.styles";
+// import { CartContext } from "../../contexts/cart.context";
+// import { useContext } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectCartCount,
+  selectIsCartOpen,
+} from "../../store/cart/cart.selector";
+ import { setIsCartOpen } from "../../store/cart/cart.action";
 const CartIcon = () => {
-    const { isopen, setIsopen, count} = useContext(CartContext)
-    const clilckHandler = () => {
-        setIsopen(!isopen);
-    }
+  const dispatch = useDispatch();
+  //const { isopen, setIsopen, count } = useContext();
+  const cartCount = useSelector(selectCartCount);
+  const isCartOpen = useSelector(selectIsCartOpen);
 
-    return (
-        <CartIconContainer onClick={clilckHandler}>
-            <ShoppingIcon />
-            <ItemCount>{count}</ItemCount>
-        </CartIconContainer>
-    );
+  const clilckHandler = () => dispatch(setIsCartOpen(!isCartOpen));
+
+  return (
+    <CartIconContainer onClick={clilckHandler}>
+      <ShoppingIcon />
+      <ItemCount>{cartCount}</ItemCount>
+    </CartIconContainer>
+  );
 };
 
 export default CartIcon;
