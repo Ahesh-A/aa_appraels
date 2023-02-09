@@ -15,10 +15,11 @@ import {
   LogoContainer,
 } from "./navigation.styles";
 import { selectCurrentUser } from "../../store/user/user.selector";
+
 const NavigationBar = () => {
   const currentUser = useSelector(selectCurrentUser);
   const isCartOpen = useSelector(selectIsCartOpen);
-//  const { isopen } = useContext(CartContext);
+  //  const { isopen } = useContext(CartContext);
 
   return (
     <Fragment>
