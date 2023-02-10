@@ -123,8 +123,8 @@ export const googleSignOut = async (auth) => {
 export const onAuthStateChangedListener = (callBack) =>
   onAuthStateChanged(auth, callBack);
 
-export const getCategoriesAndDocs = async (collection) => {
-  const collectionRef = collection(db, collection);
+export const getCategoriesAndDocs = async (coll) => {
+  const collectionRef = collection(db, coll);
   const q = query(collectionRef);
 
   const querySnapShot = await getDocs(q);
