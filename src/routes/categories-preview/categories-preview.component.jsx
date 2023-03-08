@@ -5,9 +5,11 @@ import { useSelector } from "react-redux";
 import { selectCategoriesMap } from "../../store/categories/category.selector";
 import Spinner from "../../components/spinner/spinner.components";
 import { selectCategoriesLoding } from "../../store/categories/category.selector";
+
 const CategoriesPreview = () => {
   const categoriesMap = useSelector(selectCategoriesMap);
   const isLoading = useSelector(selectCategoriesLoding);
+  
   return (
     <Fragment>
       {isLoading ? (

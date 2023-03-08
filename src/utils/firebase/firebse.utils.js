@@ -68,7 +68,7 @@ export const addCollectionAndDocuments = async (
 
   objectsToAdd.map((object) => {
     const docRef = doc(collectionRef, object.title.toLowerCase());
-    batch.set(docRef, object);
+   return  batch.set(docRef, object);
   });
 
   await batch.commit();
@@ -103,7 +103,7 @@ export const cerateUserDocumentFromAuth = async (
       console.log("error creating the user", error.message);
     }
   }
-  return userDocRef;
+  return userSnapShot;
 };
 
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
@@ -116,9 +116,8 @@ export const signInWithGoogleEmailAndPassword = async (email, password) => {
   return await signInWithEmailAndPassword(auth, email, password);
 };
 
-export const googleSignOut = async (auth) => {
-  return await signOut(auth);
-};
+export const googleSignOut = async () => 
+   await signOut(auth);
 
 export const onAuthStateChangedListener = (callBack) =>
   onAuthStateChanged(auth, callBack);
@@ -136,4 +135,17 @@ export const getCategoriesAndDocs = async (coll) => {
   // },{});
 
   // return categoryMap;
+};
+
+export const getCurrentUser = () => {
+  return new Promise((resolve, reject) => {
+    const unSubscribe = onAuthStateChanged(
+      auth,
+      (userAuth) => {
+        unSubscribe();
+        resolve(userAuth);
+      },
+      reject
+    );
+  });
 };
