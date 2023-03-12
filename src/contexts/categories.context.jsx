@@ -2,7 +2,7 @@ import { createContext, useEffect, useReducer } from "react";
 
 import { getCategoriesAndDocs } from "../utils/firebase/firebse.utils";
 
-import { createAction } from "../utils/reducer/reducer.util";
+import { createAction } from "../utils/reducer/reducer.util.ts";
 
 export const CategoriesContext = createContext({
   categoriesMap: {},
